@@ -2,6 +2,17 @@
 
 My Veggie App.
 
+the server implement 3 basic services:
+-login
+-getveggies
+-updateNutrition
+
+ - Navigation with HashRouter.
+ - The data managed in redux.
+ - Favorites in localStorage.
+ - editable nutrition fields by 'pencil' icon and update db by second click.
+
+
 ## Installation
 
 1. run the following command to Install the DB
