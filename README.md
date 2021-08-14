@@ -3,9 +3,9 @@
 My Veggie App.
 
 the server implement 3 basic services:
--login
--getveggies
--updateNutrition
+ -login
+ -getveggies
+ -updateNutrition
 
  - Navigation with HashRouter.
  - The data managed in redux.
