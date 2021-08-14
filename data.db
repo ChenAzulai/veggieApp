@@ -1,0 +1,3 @@
+{"name":"Cucumber","img":"https://d2d8wwwkmhfcva.cloudfront.net/800x/d2lnr5mha7bycj.cloudfront.net/product-image/file/large_5c2377d5-9e8d-46a5-bdc2-ec816cd84b62.jpeg","nutrition":[{"title":"Energy","value":"16g"},{"title":"Fat","value":"0.11g"}],"_id":"YfWiT82ptMKrkEWt"}
+{"name":"Tomato","img":"https://s3-us-west-2.amazonaws.com/melingoimages/Images/98055.jpg","nutrition":[{"title":"Energy","value":"18g"},{"title":"Fat","value":"0.2g"},{"title":"Cal","value":"0.0g"}],"_id":"dW7xrLkDEgQwf7RA"}
+{"$$indexCreated":{"fieldName":"name","unique":true,"sparse":false}}
