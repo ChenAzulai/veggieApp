@@ -58,7 +58,7 @@ class Login extends Component {
                         <img src="https://www.cdc.gov/foodsafety/images/comms/features/GettyImages-1247930626-500px.jpg"
                              alt=""/>
                     </div>
-                    <h2>login to Veggies Dictionary</h2>
+                    <h2>Login to Veggies Dictionary</h2>
                     <p>Email address</p>
                     <input defaultValue={this.state.email} type="text" name='email'
                            onChange={(e) => this.handleChange(e)}/>

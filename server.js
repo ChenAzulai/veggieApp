@@ -48,7 +48,7 @@ app.post('/api/save', (req, res) => {
     data.timestamp = timestamp;
     db.database.insert(data);
     res.json({
-        status: 'response success',
+        status: "response success",
     });
 
 });
@@ -57,29 +57,27 @@ app.post('/api/login', (req, res) => {
     console.log(req.body);
     db.users.findOne({email: req.body.email}, function (err, data) {
         if (err) throw err;
-        // if (data.password===req.body.password){
-        if (data != null) {
+        if (data != null && data.password === req.body.password) {
             res.send({
-                status: 'OK',
+                status: "OK",
                 token: data.userName
             })
-        } else
+        } else {
             res.send({
-                status: 'fail',
+                status: "fail",
                 token: req.email,
             })
+        }
     })
-
 });
 
 app.post('/api/veggies/:id/updateNutrition', (req, res) => {
     const vegName = req.body.vegName;
     const query = {name: vegName};
     const value = {$set: {nutrition: req.body.nutritions}};
-   db.database.update(query, value, {upsert: true}, function (err, data) {
+    db.database.update(query, value, {upsert: true}, function (err, data) {
             if (err) throw err;
             res.send({nutritions: req.body.nutritions});
-            console.log('data:', req.body);
             db.database.persistence.compactDatafile();
             // db.end();
         }
@@ -89,22 +87,22 @@ app.post('/api/veggies/:id/updateNutrition', (req, res) => {
 app.listen(PORT, console.log(`Server is starting at ${PORT}`));
 
 const cucumber = {
-    name: 'Cucumber',
-    img: 'https://d2d8wwwkmhfcva.cloudfront.net/800x/d2lnr5mha7bycj.cloudfront.net/product-image/file/large_5c2377d5-9e8d-46a5-bdc2-ec816cd84b62.jpeg',
+    name: "Cucumber",
+    img: "https://d2d8wwwkmhfcva.cloudfront.net/800x/d2lnr5mha7bycj.cloudfront.net/product-image/file/large_5c2377d5-9e8d-46a5-bdc2-ec816cd84b62.jpeg",
     // wiki:'https://en.wikipedia.org/wiki/Cucumber',
     nutrition: [
-        {title: "Energy", value: '16g'},
-        {title: "Fat", value: '0.11g'}]
+        {title: "Energy", value: "16g"},
+        {title: "Fat", value: "0.11g"}]
 };
 
 const tomato = {
-    name: 'Tomato',
-    img: 'https://s3-us-west-2.amazonaws.com/melingoimages/Images/98055.jpg',
+    name: "Tomato",
+    img: "https://s3-us-west-2.amazonaws.com/melingoimages/Images/98055.jpg",
 // wiki:'https://en.wikipedia.org/wiki/Tomato',
     nutrition: [
-        {title: "Energy", value: '18g'},
-        {title: "Fat", value: '0.2g'}]
+        {title: "Energy", value: "18g"},
+        {title: "Fat", value: "0.2g"}]
 };
 
 db.database.insert([cucumber, tomato]);
-db.users.insert({userName: 'Chen', password: 12345, email: 'chen@chen.com'});
+db.users.insert({userName: "Chen", password: "12345", email: "chen@chen.com"});
